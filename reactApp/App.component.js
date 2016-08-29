@@ -23,7 +23,7 @@ var App = React.createClass({
     )
   },
   handleRemove(removeIndex) {
-    // var newArray = this.state.slick();
+    // var newArray = this.state.splice();
     // newArray.splice(index, 1);
     // this.setState({
     //   list: newArray
