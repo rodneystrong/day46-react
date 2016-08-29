@@ -75,7 +75,14 @@
 	        'button',
 	        { onClick: this.handleClick },
 	        'Add'
-	      )
+	      ),
+	      this.state.list.map(function (value, index) {
+	        return _react2.default.createElement(
+	          'div',
+	          { key: index },
+	          value
+	        );
+	      })
 	    );
 	  },
 	  handleClick: function handleClick() {

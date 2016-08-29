@@ -14,6 +14,11 @@ var App = React.createClass({
         word
         <input value={this.state.currentItem} onChange={this.handleChange} />
         <button onClick={this.handleClick}>Add</button>
+        {this.state.list.map((value, index) => {
+          return (
+            <div key={index}>{value}</div>
+          )
+        })}
       </div>
     )
   },
