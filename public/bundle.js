@@ -65,6 +65,8 @@
 	    };
 	  },
 	  render: function render() {
+	    var _this = this;
+	
 	    console.log('lel');
 	    return _react2.default.createElement(
 	      'div',
@@ -79,11 +81,24 @@
 	      this.state.list.map(function (value, index) {
 	        return _react2.default.createElement(
 	          'div',
-	          { key: index },
+	          { onClick: _this.handleRemove.bind(_this, index), key: index },
 	          value
 	        );
 	      })
 	    );
+	  },
+	  handleRemove: function handleRemove(removeIndex) {
+	    // var newArray = this.state.slick();
+	    // newArray.splice(index, 1);
+	    // this.setState({
+	    //   list: newArray
+	    // });
+	    // the 2nd way below is cleaner
+	    this.setState({
+	      list: this.state.list.filter(function (value, index) {
+	        return index !== removeIndex;
+	      })
+	    });
 	  },
 	  handleClick: function handleClick() {
 	    this.setState({

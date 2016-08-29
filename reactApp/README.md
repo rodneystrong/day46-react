@@ -11,3 +11,5 @@ mini Project - TODO List
 - link an input to the state
 - add a button that adds the input to a list in the state
 - render the list
+
+Partial application. partially applied function

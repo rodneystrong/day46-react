@@ -16,11 +16,22 @@ var App = React.createClass({
         <button onClick={this.handleClick}>Add</button>
         {this.state.list.map((value, index) => {
           return (
-            <div key={index}>{value}</div>
+            <div onClick={this.handleRemove.bind(this, index)} key={index}>{value}</div>
           )
         })}
       </div>
     )
+  },
+  handleRemove(removeIndex) {
+    // var newArray = this.state.slick();
+    // newArray.splice(index, 1);
+    // this.setState({
+    //   list: newArray
+    // });
+    // the 2nd way below is cleaner
+    this.setState({
+      list: this.state.list.filter((value, index) => index !== removeIndex)
+    })
   },
   handleClick() {
     this.setState({
