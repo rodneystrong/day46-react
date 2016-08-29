@@ -14,3 +14,9 @@ var App = React.createClass({
   }
 });
 ReactDOM.render(<App />, document.getElementById('app'));
+
+//state is the data that affects your application.
+//so far you've kept state in your $scope (via angular)
+//In react, we'll say we have a component, and we have state.
+//
+//The component could have some amount of state (data) that affects it.
