@@ -59,14 +59,28 @@
 	var App = _react2.default.createClass({
 	  displayName: 'App',
 	  getInitialState: function getInitialState() {
-	    return {};
+	    return {
+	      item: 'item 1'
+	    };
 	  },
 	  render: function render() {
+	    console.log('lel');
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      'word'
+	      'word',
+	      _react2.default.createElement('input', { onChange: this.handleChange }),
+	      _react2.default.createElement(
+	        'button',
+	        null,
+	        'Add'
+	      )
 	    );
+	  },
+	  handleChange: function handleChange(e) {
+	    this.setState({
+	      currentItem: e.target.value
+	    });
 	  }
 	});
 	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
