@@ -1,16 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 var App = React.createClass({
+  //we're getting the initial state of our app.
+  //essentially how our app starts
+  getInitialState() {
+    return ({
+      name: 'Dan'
+      tempName: '',
+      list: ['1','2','3'],
+    })
+  },
   //render
   render() {
     return (
       <div>
-        Hello World
-        //normall in the braces below, you would do 2way data binding
-        //but that's bad. you can just run js expressions in there.
-        {{}}
-      </div>
+        <div onClick={ function() {console.log("click")}}>
+          Hello World
+          {/*normall in the braces below, you would do 2way data binding
+          //but that's bad. you can just run js expressions in there.
+          {{}}*/}
+        </div>
+        <div onClick = {this.handleClick}>
+          {this.state.name}
+        </div>
+       </div>
     )
+  },
+  handleClick() {
+    this.setState( {
+      name: 'aleeeex',
+      field: tempName
+    })
   }
 });
 ReactDOM.render(<App />, document.getElementById('app'));
