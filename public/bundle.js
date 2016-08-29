@@ -58,50 +58,18 @@
 	
 	var App = _react2.default.createClass({
 	  displayName: 'App',
-	
-	  //we're getting the initial state of our app.
-	  //essentially how our app starts
 	  getInitialState: function getInitialState() {
-	    return {
-	      name: 'Dan'
-	    };
+	    return {};
 	  },
-	
-	  //render
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(
-	        'div',
-	        { onClick: function onClick() {
-	            console.log("click");
-	          } },
-	        'Hello World'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { onClick: this.handleClick },
-	        this.state.name
-	      )
+	      'word'
 	    );
-	  },
-	  handleClick: function handleClick() {
-	    this.setState({
-	      name: 'aleeeex'
-	    });
 	  }
 	});
 	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
-	
-	//state is the data that affects your application.
-	//so far you've kept state in your $scope (via angular)
-	//In react, we'll say we have a component, and we have state.
-	//
-	//The component could have some amount of state (data) that affects it.
-	//In angular you would use ng-model for this.
-	//
-	//
 
 /***/ },
 /* 1 */
