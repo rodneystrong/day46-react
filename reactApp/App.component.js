@@ -30,7 +30,7 @@ var App = React.createClass({
     // });
     // the 2nd way below is cleaner
     this.setState({
-      list: this.state.list.filter((value, index) => index !== removeIndex)
+      list: this.state.list.filter((value, index) => { return index !== removeIndex })
     })
   },
   handleClick() {
