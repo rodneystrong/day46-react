@@ -20,3 +20,6 @@ ReactDOM.render(<App />, document.getElementById('app'));
 //In react, we'll say we have a component, and we have state.
 //
 //The component could have some amount of state (data) that affects it.
+//In angular you would use ng-model for this.
+//
+//
