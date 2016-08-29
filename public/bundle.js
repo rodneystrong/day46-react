@@ -60,7 +60,8 @@
 	  displayName: 'App',
 	  getInitialState: function getInitialState() {
 	    return {
-	      item: 'item 1'
+	      list: [],
+	      currentItem: ''
 	    };
 	  },
 	  render: function render() {
@@ -69,13 +70,19 @@
 	      'div',
 	      null,
 	      'word',
-	      _react2.default.createElement('input', { onChange: this.handleChange }),
+	      _react2.default.createElement('input', { value: this.state.currentItem, onChange: this.handleChange }),
 	      _react2.default.createElement(
 	        'button',
-	        null,
+	        { onClick: this.handleClick },
 	        'Add'
 	      )
 	    );
+	  },
+	  handleClick: function handleClick() {
+	    this.setState({
+	      list: this.state.list.concat([this.state.currentItem]),
+	      currentItem: ''
+	    });
 	  },
 	  handleChange: function handleChange(e) {
 	    this.setState({

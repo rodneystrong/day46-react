@@ -3,18 +3,25 @@ import ReactDOM from 'react-dom';
 var App = React.createClass({
   getInitialState(){
     return({
-      item: 'item 1'
+      list: [],
+      currentItem: '',
     })
   },
   render() {
     console.log('lel');
     return (
       <div>
-        word 
-        <input onChange={this.handleChange} />
-        <button>Add</button>
+        word
+        <input value={this.state.currentItem} onChange={this.handleChange} />
+        <button onClick={this.handleClick}>Add</button>
       </div>
     )
+  },
+  handleClick() {
+    this.setState({
+      list: this.state.list.concat([this.state.currentItem]),
+      currentItem: ''
+    })
   },
   handleChange(e){
     this.setState({
